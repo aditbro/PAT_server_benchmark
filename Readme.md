@@ -1,3 +1,12 @@
+## How To Run Test
+
+1. Pastikan Operating System mengizinkan pembuatan 20000+ connection, (file konfigurasi ada di /config)
+2. Copy file tes html ke document root tiap service (misal: /var/www/html, untuk Apache2)
+3. Jalankan Server yang diinginkan
+4. Jalankan perintah Apache benchmark <br>
+ab -n (jumlah koneksi} -c (jumlah konkuren) http://(ip-server):(port) <br>
+contoh: ab -n 10000 -c 10000 http://127.0.0.1:80/
+
 ## Test Result
 Testing was done using Apache Benchmark
 
