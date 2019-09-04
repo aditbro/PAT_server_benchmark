@@ -104,3 +104,41 @@ Connection Times (ms)
 |Total:        |268  |556  |35.2    |552     |638|
 
 mean memory usage during serving : 28.76 MB (only the serving worker)
+
+## Node.js
+## How To Run Test
+
+1. Pastikan Operating System mengizinkan pembuatan 20000+ connection, (file konfigurasi ada di /config)
+2. Jalankan node server dengan perintah <br>
+"node --nouse-idle-notification --expose-gc serve.js index500.html"<br>
+dimana index500.html adalah nama file pada folder html_files <br>
+opsi --nouse-idle-notification dan --expose-gc digunakan untuk mematikan auto garbage collecting
+4. Jalankan perintah Apache benchmark <br>
+ab -n (jumlah koneksi} -c (jumlah konkuren) http://(ip-server):(port) <br>
+contoh: ab -n 10000 -c 10000 http://127.0.0.1:8080/
+
+## Test Result
+Testing was done using Apache Benchmark
+
+#### 500B file
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            8080
+
+Document Path:          /
+Document Length:        501 bytes
+
+Concurrency Level:      10000
+Time taken for tests:   4.646 seconds
+Complete requests:      10000
+
+Connection Times (ms)
+
+|              |min  |mean|+/-sd |median   |max|
+|---|---|---|---|---|---|
+|Connect:        |0  |412 |354.7    |285    |1095|
+|Processing:   |329 |2021 |963.5   |2280    |3472|
+|Waiting:      |159 |1996 |1002.5   |2278    |3471|
+|Total:        |738 |2433 |1135.2   |2501    |4529|
+
+mean memory usage during serving : 87.175 MB (measured on first run after server turned on)
