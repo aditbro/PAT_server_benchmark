@@ -20,17 +20,18 @@ Document Path:          / <br>
 Document Length:        500 bytes <br>
 
 Concurrency Level:      10000 <br>
-Time taken for tests:   23.727 seconds <br>
+Time taken for tests:   2.139 seconds <br>
 Complete requests:      10000
 
 Connection Times (ms)
 
-|                 |        min | mean | +/-sd   | median | max |
-|-----------------|------------|------|---------|--------|-----|
-|Connect:         |0           |338   |475.4    |8       |1062 |
-|Processing:      |1           |300   |799.9    |21      |4041 |
-|Waiting:         |1           |297   |801.0    |17      |4041 |
-|Total:           |1           |638   |1117.0   |28      |5081 |
+|              |min  |mean |+/-sd |median   |max|
+|---|---|---|---|---|---|
+|Connect:|       17|  325| 456.4|     40|    1120|
+|Processing:|    28|  110| 142.1|     52|    1008|
+|Waiting:|       16|  100| 145.5|     43|    1008|
+|Total:|         54|  435| 560.1|     88|    2087|
+
 
 #### 20kB file
 Server Software:        Apache/2.4.29 <br>
