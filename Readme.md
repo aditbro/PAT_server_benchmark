@@ -32,6 +32,8 @@ Connection Times (ms)
 |Waiting:|       16|  100| 145.5|     43|    1008|
 |Total:|         54|  435| 560.1|     88|    2087|
 
+mean memory usage during serving : 35.7 MB
+
 
 #### 20kB file
 Server Software:        Apache/2.4.29 <br>
@@ -54,6 +56,7 @@ Connection Times (ms)
 |Waiting:        |5  |111 |201.7     |31    |1817|
 |Total:         |39  |432 |577.4    |100    |2875|
 
+mean memory usage during serving : 47.6 MB
 
 ### Nginx
 #### 500B file
