@@ -112,7 +112,7 @@ mean memory usage during serving : 28.76 MB (only the serving worker)
 2. Jalankan node server dengan perintah <br>
 "node --nouse-idle-notification --expose-gc serve.js index500.html"<br>
 dimana index500.html adalah nama file pada folder html_files <br>
-opsi --nouse-idle-notification dan --expose-gc digunakan untuk mematikan auto garbage collecting
+opsi --nouse-idle-notification dan --expose-gc digunakan untuk mematikan auto garbage collection
 4. Jalankan perintah Apache benchmark <br>
 ab -n (jumlah koneksi} -c (jumlah konkuren) http://(ip-server):(port) <br>
 contoh: ab -n 10000 -c 10000 http://127.0.0.1:8080/
