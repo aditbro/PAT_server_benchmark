@@ -11,7 +11,7 @@ contoh: ab -n 10000 -c 10000 http://127.0.0.1:80/
 Testing was done using Apache Benchmark
 
 ### Apache2
-#### 500kB file
+#### 500B file
 Server Software:        Apache/2.4.29 <br>
 Server Hostname:        127.0.0.1 <br>
 Server Port:            80 <br>
@@ -32,8 +32,30 @@ Connection Times (ms)
 |Waiting:         |1           |297   |801.0    |17      |4041 |
 |Total:           |1           |638   |1117.0   |28      |5081 |
 
+#### 20kB file
+Server Software:        Apache/2.4.29 <br>
+Server Hostname:        127.0.0.1 <br>
+Server Port:            80 <br>
+ <br>
+Document Path:          / <br>
+Document Length:        20001 bytes <br>
+
+Concurrency Level:      10000 <br>
+Time taken for tests:   2.923 seconds <br>
+Complete requests:      10000
+
+Connection Times (ms)
+
+|              |min|  mean |+/-sd| median   |max|
+|---|---|---|---|---|---|
+|Connect:        |6  |289 |436.3     |29    |1102|
+|Processing:    |24  |143 |191.3     |71    |1818|
+|Waiting:        |5  |111 |201.7     |31    |1817|
+|Total:         |39  |432 |577.4    |100    |2875|
+
+
 ### Nginx
-#### 500kB file
+#### 500B file
 Server Software:        nginx/1.14.0 <br> 
 Server Hostname:        127.0.0.1 <br>
 Server Port:            80 <br>
