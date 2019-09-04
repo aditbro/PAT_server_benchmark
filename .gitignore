@@ -1,0 +1,2 @@
+# ignore the C build file
+libevent/c-server

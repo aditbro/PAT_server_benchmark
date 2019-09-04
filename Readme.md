@@ -105,6 +105,72 @@ Connection Times (ms)
 
 mean memory usage during serving : 28.76 MB (only the serving worker)
 
+## Libevent C
+## How To Run Test
+
+1. Pastikan Operating System mengizinkan pembuatan 20000+ connection, (file konfigurasi ada di /config)
+2. Pastikan library libevent sudah terinstall di PC anda
+3. Compile source code dengan menjalankan perintah `make` pada folder **libevent**
+4. Jalankan web server dengan perintah `./c-server <nama_file>` dengan `<nama_file>` diisi dengan `../html_files/index500.html` untuk testing 500B file dan `../html_files/index20.html` untuk testing 20kb file pada folder **libevent**
+4. Jalankan perintah Apache benchmark <br>
+ab -n (jumlah koneksi} -c (jumlah konkuren) http://(ip-server):(port) <br>
+contoh: ab -n 10000 -c 10000 http://127.0.0.1:8080/
+
+## Test Result
+Libevent library :
+ - libevent-dev 
+ - libevent-extra-2.1-6 
+ - libevent-openssl-2.1-6
+ - libevent-pthreads-2.1-6
+ 
+Testing was done using Apache Benchmark
+
+#### 500B file
+Server Software:         <br>
+Server Hostname:        127.0.0.1 <br>
+Server Port:            8080 <br>
+ <br>
+Document Path:          / <br>
+Document Length:        501 bytes <br>
+ <br>
+Concurrency Level:      10000 <br>
+Time taken for tests:   0.508 seconds <br>
+Complete requests:      10000
+
+Connection Times (ms)
+
+|              |min  |mean|+/-sd |median   |max|
+|---|---|---|---|---|---|
+|Connect:        |107  |160 |32.2    |158    |240|
+|Processing:   |126 |139 |12.3   |138    |166|
+|Waiting:      |84 |122 |25.1   |125    |166|
+|Total:        |272 |298 |21.3   |295    |366|
+
+mean memory usage during serving : 21.91 MB (measured on first run after server turned on)
+
+#### 20kB file
+Server Software:         <br>
+Server Hostname:        127.0.0.1 <br>
+Server Port:            8080 <br>
+ <br>
+Document Path:          / <br>
+Document Length:        20001 bytes <br>
+ <br>
+Concurrency Level:      10000 <br>
+Time taken for tests:   1.173 seconds <br>
+Complete requests:      10000
+
+Connection Times (ms)
+
+|              |min  |mean |+/-sd |median   |max|
+|---|---|---|---|---|---|
+|Connect:        |106  |160 |31.4   |159    |222|
+|Processing:   |106 |791 |106.8   |816    |850|
+|Waiting:       |101 |630 |157.7   |686    |708|
+|Total:        |327 |951 |91.2   |972    |989|
+
+mean memory usage during serving : 268.12 MB (measured on first run after server turned on)
+
 ## Node.js
 ## How To Run Test
 
