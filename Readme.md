@@ -121,15 +121,15 @@ contoh: ab -n 10000 -c 10000 http://127.0.0.1:8080/
 Testing was done using Apache Benchmark
 
 #### 500B file
-Server Software:        
-Server Hostname:        127.0.0.1
-Server Port:            8080
-
-Document Path:          /
-Document Length:        501 bytes
-
-Concurrency Level:      10000
-Time taken for tests:   4.646 seconds
+Server Software:         <br>
+Server Hostname:        127.0.0.1 <br>
+Server Port:            8080 <br>
+ <br>
+Document Path:          / <br>
+Document Length:        501 bytes <br>
+ <br>
+Concurrency Level:      10000 <br>
+Time taken for tests:   4.646 seconds <br>
 Complete requests:      10000
 
 Connection Times (ms)
