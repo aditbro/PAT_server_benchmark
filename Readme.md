@@ -118,6 +118,7 @@ ab -n (jumlah koneksi} -c (jumlah konkuren) http://(ip-server):(port) <br>
 contoh: ab -n 10000 -c 10000 http://127.0.0.1:8080/
 
 ## Test Result
+node v10.16.3
 Testing was done using Apache Benchmark
 
 #### 500B file
@@ -142,3 +143,24 @@ Connection Times (ms)
 |Total:        |738 |2433 |1135.2   |2501    |4529|
 
 mean memory usage during serving : 87.175 MB (measured on first run after server turned on)
+
+#### 20kB file
+Server Software:         <br>
+Server Hostname:        127.0.0.1 <br>
+Server Port:            8080 <br>
+ <br>
+Document Path:          / <br>
+Document Length:        20001 bytes <br>
+ <br>
+Concurrency Level:      10000 <br>
+Time taken for tests:   4.406 seconds <br>
+Complete requests:      10000
+
+Connection Times (ms)
+
+|              |min  |mean |+/-sd |median   |max|
+|---|---|---|---|---|---|
+|Connect:        |0  |607 |471.0   |1015    |1071|
+|Processing:   |125 |1644 |835.5   |1493    |3254|
+|Waiting:       |66 |1638 |842.2   |1490    |3251|
+|Total:        |388 |2252 |1203.0   |2430    |4288|
