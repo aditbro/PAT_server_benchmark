@@ -79,3 +79,28 @@ Connection Times (ms)
 | Processing  |  81 | 275  |  75.1 |  222   | 450 |
 | Waiting     |  30 | 264  |  84.9 |  216   | 450 |
 | Total       | 317 | 602  |  35.1 |  602   | 665 |
+
+mean memory usage during serving : 25.32 MB (only the serving worker)
+
+#### 20kB file
+Server Software:        nginx/1.14.0 <br>
+Server Hostname:        127.0.0.1 <br>
+Server Port:            80 <br>
+ <br>
+Document Path:          /index20.html <br>
+Document Length:        20001 bytes <br>
+ <br>
+Concurrency Level:      10000 <br>
+Time taken for tests:   1.016 seconds <br>
+Complete requests:      10000
+
+Connection Times (ms)
+
+|              |min  |mean |+/-sd| median   |max|
+|---|---|---|---|---|---|
+|Connect:      |169  |299  |76.9    |297     |435|
+|Processing:    |97  |257  |61.6    |231     |416|
+|Waiting:       |18  |228  |84.2    |203     |416|
+|Total:        |268  |556  |35.2    |552     |638|
+
+mean memory usage during serving : 28.76 MB (only the serving worker)
