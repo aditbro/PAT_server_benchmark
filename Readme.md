@@ -230,3 +230,14 @@ Connection Times (ms)
 |Processing:   |125 |1644 |835.5   |1493    |3254|
 |Waiting:       |66 |1638 |842.2   |1490    |3251|
 |Total:        |388 |2252 |1203.0   |2430    |4288|
+
+## Tornado -- Python Library
+## How To Run Test
+
+1. Pastikan Operating System mengizinkan pembuatan 20000+ connection, (file konfigurasi ada di /config)
+2. Jalankan node server dengan perintah <br>
+"python tserver index500.html" pada folder tornado<br>
+dimana index500.html adalah nama file pada folder html_files <br>
+4. Jalankan perintah Apache benchmark <br>
+ab -n (jumlah koneksi} -c (jumlah konkuren) http://(ip-server):(port) <br>
+contoh: ab -n 10000 -c 10000 http://127.0.0.1:8080/
