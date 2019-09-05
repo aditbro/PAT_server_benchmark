@@ -236,8 +236,37 @@ Connection Times (ms)
 
 1. Pastikan Operating System mengizinkan pembuatan 20000+ connection, (file konfigurasi ada di /config)
 2. Jalankan node server dengan perintah <br>
-"python tserver.py index500.html" pada folder tornado<br>
+`python tserver.py index500.html` pada folder tornado<br>
 dimana index500.html adalah nama file pada folder html_files <br>
 4. Jalankan perintah Apache benchmark <br>
-ab -n (jumlah koneksi} -c (jumlah konkuren) http://(ip-server):(port) <br>
-contoh: ab -n 10000 -c 10000 http://127.0.0.1:8080/
+`ab -n (jumlah koneksi} -c (jumlah konkuren) http://(ip-server):(port)` <br>
+contoh: `ab -n 10000 -c 10000 http://127.0.0.1:8080/`
+
+## Test Result
+Testing was done using Apache Benchmark
+
+#### 500B file
+Server Software:         <br>
+Server Hostname:        127.0.0.1 <br>
+Server Port:            8080 <br>
+ <br>
+Document Path:          / <br>
+Document Length:        501 bytes <br>
+ <br>
+Max completed requests:      8813<br>
+**(failed to solve C10K problem)**
+
+mean memory usage during serving : 31.45 MB (measured on first run after server turned on)
+
+#### 20kB file
+Server Software:         <br>
+Server Hostname:        127.0.0.1 <br>
+Server Port:            8080 <br>
+ <br>
+Document Path:          / <br>
+Document Length:        20001 bytes <br>
+ <br>
+Max completed requests:      7264 <br>
+**(failed to solve C10K problem)**
+
+mean memory usage during serving : 38.79 MB (measured on first run after server turned on)
