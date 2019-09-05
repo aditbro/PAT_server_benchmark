@@ -236,7 +236,7 @@ Connection Times (ms)
 
 1. Pastikan Operating System mengizinkan pembuatan 20000+ connection, (file konfigurasi ada di /config)
 2. Jalankan node server dengan perintah <br>
-"python tserver index500.html" pada folder tornado<br>
+"python tserver.py index500.html" pada folder tornado<br>
 dimana index500.html adalah nama file pada folder html_files <br>
 4. Jalankan perintah Apache benchmark <br>
 ab -n (jumlah koneksi} -c (jumlah konkuren) http://(ip-server):(port) <br>
